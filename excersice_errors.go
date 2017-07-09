@@ -7,6 +7,8 @@ import (
 type ErrNegativeSqrt float64
 
 func (e ErrNegativeSqrt) Error() string {
+	// fmt パッケージは、変数を文字列で出力する際に
+	// error インタフェースを確認するのでfloatに変換しないとスタックオーバーフローになる
 	return fmt.Sprintf("cannot Sqrt negative number: %v", float64(e))
 }
 
