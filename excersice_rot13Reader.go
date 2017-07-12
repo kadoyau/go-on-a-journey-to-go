@@ -37,6 +37,7 @@ rot13Reader変数rをReadしたときここが呼ばれる
 func (r rot13Reader) Read(p []byte) (n int, err error) {
 	// NewReaderで生成した*Reader r.r（s） のデータを 
   // *strings.Reader.Read()をつかって p に入れる
+	// https://golang.org/pkg/strings/#Reader.Read
 	n, err = r.r.Read(p) 
 
 	// convert given the string
